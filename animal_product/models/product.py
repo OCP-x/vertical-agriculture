@@ -3,15 +3,15 @@
 from odoo import api, fields, models
 
 
-class ResPartner(models.Model):
-    _inherit = "res.partner"
+class ProductProduct(models.Model):
+    _inherit = "product.product"
 
     @api.depends("animal_ids")
     def _compute_animal_count(self):
         for rec in self:
             rec.animal_count = len(rec.animal_ids)
 
-    animal_ids = fields.One2many("animal", "partner_id", string="Animals")
+    animal_ids = fields.One2many("animal", "product_id", string="Animals")
     animal_count = fields.Integer(
         compute=_compute_animal_count, string="Number of Animals", store=True
     )
