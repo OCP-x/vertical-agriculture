@@ -9,7 +9,14 @@
     "maintainer": "Open Source Integrators",
     "website": "https://github.com/OCA/partner-contact",
     "depends": ["animal"],
-    "data": ["views/animal.xml", "views/res_partner.xml"],
+    "data": [
+        "views/animal_views.xml",
+        "views/herd_views.xml",
+        "views/product_views.xml",
+        "views/res_config_settings_views.xml",
+        "views/specie_views.xml",
+        "views/stock_production_lot.xml",
+    ],
     "development_status": "Beta",
     "maintainers": ["osscar"],
 }

@@ -9,18 +9,8 @@ class Herd(models.Model):
     _description = "Herd Inventory"
     _rec_name = "display_name"
 
-    # product_id = fields.Many2one(related="lot_id.product_id", readonly=True)
-    # product_id = fields.Many2one(related="lot_id.product_id", readonly=True)
-
-    display_name = fields.Char(
-        "Display Name", compute="_compute_display_name", store=True
-    )
-    name = fields.Char(string="Livestock")
-    product_id = fields.Many2one(
-        "product.product", index=True, track_visibility="onchange"
-    )
     product_template_id = fields.Many2one(
-        "product.template", index=True, track_visibility="onchange"
+        comodel_name="product.template", index=True, track_visibility="onchange"
     )
     partner_id = fields.Many2one(comodel_name="res.partner", string="Owner")
     specie_id = fields.Many2one(
