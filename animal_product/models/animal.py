@@ -6,13 +6,32 @@ from odoo import fields, models
 class Animal(models.Model):
     _inherit = "animal"
 
+    product_template_id = fields.Many2one(related="herd_id.product_template_id", readonly=True)
+    brand_id = fields.Many2one(
+        # "product.brand",
+        related="product_template_id.product_brand_id",
+        readonly=True,
+        help="Livestock brand. The value is retrieved from product template.",
+    )
+    counterbrand_id = fields.Many2one(
+        "product.brand",
+        # related="product_template_id.product_brand_id",
+        # domain=,
+        # states=,
+        help="Livestock brand. The value is retrieved from product template.",
+    )
     lot_id = fields.Many2one(
         comodel_name="stock.production.lot",
         # domain=,
+        # states=,
+    )
+    product_id = fields.Many2one(
+        # comodel_name="product.product",
+        related="lot_id.product_brand_id",
+        # domain=,
         readonly=True
     )
-    product_id = fields.Many2one(related="lot_id.product_id", readonly=True)
-    product_template_id = fields.Many2one(related="product_id.product_tmpl_id", readonly=True)
+    
     # brand_ranch_id = 
     # brand_year_id = 
 

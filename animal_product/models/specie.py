@@ -11,6 +11,12 @@ class AnimalSpecies(models.Model):
     _rec_name = "name"
     _order = "complete_name"
 
+    product_template_id = fields.Many2one(
+        comodel_name="product.template",
+        # domain=,
+        # index=True,
+        track_visibility="onchange"
+    )
     attribute_id = fields.Many2one(
         comodel_name="product.attribute", 
         # domain=

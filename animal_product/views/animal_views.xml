@@ -1,59 +1,120 @@
 <odoo>
 
     <!-- Animal Tree View -->
-    <record id="view_animal_owner_tree" model="ir.ui.view">
-        <field name="name">view.animal.owner.tree</field>
+    <record id="view_animal_tree" model="ir.ui.view">
+        <field name="name">view.animal.tree.inherit</field>
         <field name="model">animal</field>
         <field name="inherit_id" ref="animal.view_animal_tree" />
         <field name="arch" type="xml">
             <field name="color_id" position="after">
-                <field name="partner_id" />
+                <field name="lot_id" />
+                <field name="brand_id" />
+                <field name="counterbrand_id" />
+                <field name="hotbrand_id" />
+                <field name="product_id" />
+                <field name="product_template_id" />
             </field>
         </field>
     </record>
 
     <!-- Animal Form View -->
-    <record id="view_animal_owner_form" model="ir.ui.view">
-        <field name="name">view.animal.owner.form</field>
+    <record id="view_animal_form" model="ir.ui.view">
+        <field name="name">view.animal.form.inherit</field>
         <field name="model">animal</field>
         <field name="inherit_id" ref="animal.view_animal_form" />
         <field name="arch" type="xml">
             <field name="birth_date" position="after">
-                <field name="partner_id" />
+                <field name="lot_id" />
+                <field name="brand_id" />
+                <field name="counterbrand_id" />
+                <field name="hotbrand_id" />
+                <field name="product_id" />
+                <field name="product_template_id" />
             </field>
         </field>
     </record>
 
     <!-- Animal Kanban View -->
-    <record id="view_animal_owner_kanban" model="ir.ui.view">
-        <field name="name">view.animal.owner.kanban</field>
+    <record id="view_animal_kanban" model="ir.ui.view">
+        <field name="name">view.animal.kanban.inherit</field>
         <field name="model">animal</field>
         <field name="inherit_id" ref="animal.view_animal_kanban" />
         <field name="arch" type="xml">
             <field name="name" position="after">
-                <field name="partner_id" />
+                <field name="lot_id" />
+                <field name="brand_id" />
+                <field name="counterbrand_id" />
+                <field name="hotbrand_id" />
+                <field name="product_id" />
+                <field name="product_template_id" />
             </field>
             <xpath expr="//div[hasclass('oe_kanban_details')]/ul" position="inside">
-                <li t-if="record.partner_id.raw_value"><field name="partner_id" /></li>
+                <li t-if="record.lot_id.raw_value"><field name="lot_id" /></li>
+                <li t-if="record.brand_id.raw_value"><field name="brand_id" /></li>
+                <li t-if="record.counterbrand_id.raw_value"><field name="counterbrand_id" /></li>
+                <li t-if="record.hotbrand_id.raw_value"><field name="hotbrand_id" /></li>
+                <li t-if="record.product_id.raw_value"><field name="product_id" /></li>
+                <li t-if="record.product_template_id.raw_value"><field name="product_template_id" /></li>
             </xpath>
         </field>
     </record>
 
     <!-- Animal Search View -->
-    <record id="view_animal_owner_search" model="ir.ui.view">
-        <field name="name">view.animal.owner.search</field>
+    <record id="view_animal_search" model="ir.ui.view">
+        <field name="name">view.animal.search.inherit</field>
         <field name="model">animal</field>
         <field name="inherit_id" ref="animal.view_animal_search" />
         <field name="arch" type="xml">
             <field name="name" position="after">
-                <field name="partner_id" />
+                <field name="lot_id" />
+                <field name="brand_id" />
+                <field name="counterbrand_id" />
+                <field name="hotbrand_id" />
+                <field name="product_id" />
+                <field name="product_template_id" />
             </field>
             <filter name="gender" position="before">
                 <filter
-                    name="partner_id"
-                    string="Owner"
+                    name="lot_id"
+                    string="Lot/Serial"
                     domain=""
-                    context="{'group_by': 'partner_id'}"
+                    context="{'group_by': 'product_id'}"
+                />
+                <filter
+                    name="brand_id"
+                    string="Brand"
+                    domain=""
+                    context="{'group_by': 'product_id'}"
+                />
+                <filter
+                    name="counterbrand_id"
+                    string="Counterbrand"
+                    domain=""
+                    context="{'group_by': 'product_id'}"
+                />
+                <filter
+                    name="hotbrand_id"
+                    string="Hot Brand"
+                    domain=""
+                    context="{'group_by': 'product_id'}"
+                />
+                <!-- <filter
+                    name="brand_id"
+                    string="Brand"
+                    domain=""
+                    context="{'group_by': 'product_id'}"
+                /> -->
+                <filter
+                    name="product_id"
+                    string="Product"
+                    domain=""
+                    context="{'group_by': 'herd_id'}"
+                />
+                <filter
+                    name="product_template_id"
+                    string="Product Template"
+                    domain=""
+                    context="{'group_by': 'herd_id'}"
                 />
             </filter>
         </field>

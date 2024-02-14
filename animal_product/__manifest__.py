@@ -12,8 +12,9 @@
     "data": [
         "views/animal_views.xml",
         "views/herd_views.xml",
+        "views/product_template_views.xml",
         "views/product_views.xml",
-        "views/res_config_settings_views.xml",
+        # "views/res_config_settings_views.xml",
         "views/specie_views.xml",
         "views/stock_production_lot.xml",
     ],
