@@ -10,7 +10,7 @@
                 <field name="lot_id" />
                 <field name="brand_id" />
                 <field name="counterbrand_id" />
-                <field name="hotbrand_id" />
+                <field name="hotbrand" />
                 <field name="product_id" />
                 <field name="product_template_id" />
             </field>
@@ -27,7 +27,7 @@
                 <field name="lot_id" />
                 <field name="brand_id" />
                 <field name="counterbrand_id" />
-                <field name="hotbrand_id" />
+                <field name="hotbrand" />
                 <field name="product_id" />
                 <field name="product_template_id" />
             </field>
@@ -44,7 +44,7 @@
                 <field name="lot_id" />
                 <field name="brand_id" />
                 <field name="counterbrand_id" />
-                <field name="hotbrand_id" />
+                <field name="hotbrand" />
                 <field name="product_id" />
                 <field name="product_template_id" />
             </field>
@@ -52,7 +52,7 @@
                 <li t-if="record.lot_id.raw_value"><field name="lot_id" /></li>
                 <li t-if="record.brand_id.raw_value"><field name="brand_id" /></li>
                 <li t-if="record.counterbrand_id.raw_value"><field name="counterbrand_id" /></li>
-                <li t-if="record.hotbrand_id.raw_value"><field name="hotbrand_id" /></li>
+                <li t-if="record.hotbrand.raw_value"><field name="hotbrand" /></li>
                 <li t-if="record.product_id.raw_value"><field name="product_id" /></li>
                 <li t-if="record.product_template_id.raw_value"><field name="product_template_id" /></li>
             </xpath>
@@ -69,7 +69,7 @@
                 <field name="lot_id" />
                 <field name="brand_id" />
                 <field name="counterbrand_id" />
-                <field name="hotbrand_id" />
+                <field name="hotbrand" />
                 <field name="product_id" />
                 <field name="product_template_id" />
             </field>
@@ -93,7 +93,7 @@
                     context="{'group_by': 'product_id'}"
                 />
                 <filter
-                    name="hotbrand_id"
+                    name="hotbrand"
                     string="Hot Brand"
                     domain=""
                     context="{'group_by': 'product_id'}"

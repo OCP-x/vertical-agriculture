@@ -7,10 +7,11 @@ class Herd(models.Model):
     _inherit = "herd"
 
     product_template_id = fields.Many2one(
-        comodel_name="product.template",
+        # comodel_name="product.template",
+        related="specie_id.product_template_id",
         # domain=,
         # index=True,
-        track_visibility="onchange",
+        tracking=True,
     )
     brand_id = fields.Many2one(
         "product.brand",

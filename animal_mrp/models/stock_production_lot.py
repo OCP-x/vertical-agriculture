@@ -7,7 +7,7 @@ class ProductionLot(models.Model):
     _inherit = "stock.production.lot"
 
     animal_id = fields.Many2one(
-        "animal", string="Animal", index=True, track_visibility="onchange"
+        "animal", string="Animal", index=True, tracking=True
     )
 
     def action_view_animal(self):

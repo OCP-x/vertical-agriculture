@@ -15,7 +15,7 @@ class AnimalSpecies(models.Model):
         comodel_name="product.template",
         # domain=,
         # index=True,
-        track_visibility="onchange"
+        tracking=True
     )
     attribute_id = fields.Many2one(
         comodel_name="product.attribute", 

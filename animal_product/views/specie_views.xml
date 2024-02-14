@@ -1,0 +1,42 @@
+<odoo>
+
+    <record id="view_animal_species_tree" model="ir.ui.view">
+        <field name="name">view.animal.species.tree.inherit</field>
+        <field name="model">animal.species</field>
+        <field name="inherit_id" ref="animal.view_animal_species_tree" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="product_template_id" />
+                <field name="attribute_id" />
+                <field name="attribute_value_id" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_animal_species_form" model="ir.ui.view">
+        <field name="name">view.animal.species.form.inherit</field>
+        <field name="model">animal.species</field>
+        <field name="inherit_id" ref="animal.view_animal_species_form" />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="product_template_id" />
+                <field name="attribute_id" />
+                <field name="attribute_value_id" />
+            </field>
+        </field>
+    </record>
+
+    <record id="animal_specie_search_view" model="ir.ui.view">
+        <field name="name">view.animal.species.search.inherit</field>
+        <field name="model">animal.species</field>
+        <field name="inherit_id" ref="herd.animal_specie_search_view" />
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="product_template_id" />
+                <field name="attribute_id" />
+                <field name="attribute_value_id" />
+            </field>
+        </field>
+    </record>
+
+</odoo>

@@ -9,16 +9,24 @@ class Animal(models.Model):
     product_template_id = fields.Many2one(related="herd_id.product_template_id", readonly=True)
     brand_id = fields.Many2one(
         # "product.brand",
-        related="product_template_id.product_brand_id",
+        related="herd_id.brand_id",
         readonly=True,
         help="Livestock brand. The value is retrieved from product template.",
     )
     counterbrand_id = fields.Many2one(
         "product.brand",
-        # related="product_template_id.product_brand_id",
+        # related="product_template_id.brand_id",
         # domain=,
         # states=,
         help="Livestock brand. The value is retrieved from product template.",
+    )
+    hotbrand = fields.Integer(
+        string="Hot Brand",
+        # "product.brand",
+        # related="product_template_id.brand_id",
+        # domain=,
+        # states=,
+        # help="Livestock brand. The value is retrieved from product template.",
     )
     lot_id = fields.Many2one(
         comodel_name="stock.production.lot",
@@ -27,7 +35,7 @@ class Animal(models.Model):
     )
     product_id = fields.Many2one(
         # comodel_name="product.product",
-        related="lot_id.product_brand_id",
+        related="lot_id.product_id",
         # domain=,
         readonly=True
     )

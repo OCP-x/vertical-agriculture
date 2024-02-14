@@ -13,5 +13,5 @@ class Herd(models.Model):
         comodel_name="product.template",
         # domain=,
         index=True,
-        track_visibility="onchange"
+        tracking=True
     )

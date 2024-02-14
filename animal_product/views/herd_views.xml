@@ -1,0 +1,35 @@
+<odoo>
+
+    <record id="view_herd_tree" model="ir.ui.view">
+        <field name="name">view.herd.tree.inherit</field>
+        <field name="model">herd</field>
+        <field name="inherit_id" ref="herd.view_herd_tree" />
+        <field name="arch" type="xml">
+            <tree>
+                <field name="display_name" />
+                <field name="partner_id" />
+                <field name="specie_id" position="after">
+                    <field name="product_template_id" />
+                    <field name="attribute_id" />
+                    <field name="attribute_value_id" />
+                    <field name="brand_id" />
+                </field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_herd_form" model="ir.ui.view">
+        <field name="name">view.herd.form.inherit</field>
+        <field name="model">herd</field>
+        <field name="inherit_id" ref="herd.view_herd_form" />
+        <field name="arch" type="xml">
+            <field name="specie_id" position="after">
+                <field name="product_template_id" />
+                <field name="attribute_id" />
+                <field name="attribute_value_id" />
+                <field name="brand_id" />
+            </field>
+        </field>
+    </record>
+
+</odoo>
